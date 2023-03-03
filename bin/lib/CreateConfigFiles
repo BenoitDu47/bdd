@@ -1,0 +1,46 @@
+//package fr.ldnr.dao;
+//
+//import java.io.FileInputStream;
+//import java.io.FileNotFoundException;
+//import java.io.IOException;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.SQLException;
+//import java.util.Properties;
+//
+//public class CreateConfigFile {
+//	public static void main(String[] args) throws IOException, SQLException {
+//		Properties prop = readPropertiesFile("src/lib/config.properties");
+//
+//		try {
+//			Class.forName(prop.getProperty("db.driver.class"));
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		String url = prop.getProperty("db.url");
+//		String login = prop.getProperty("db.login");
+//		String password = prop.getProperty("db.password");
+//		
+//		Connection connection = DriverManager.getConnection(url, login, password);
+//	
+//	}
+//
+//	public static Properties readPropertiesFile(String fileName) throws IOException {
+//		FileInputStream fis = null;
+//		Properties prop = null;
+//		try {
+//			fis = new FileInputStream(fileName);
+//			prop = new Properties();
+//			prop.load(fis);
+//		} catch (FileNotFoundException fnfe) {
+//			fnfe.printStackTrace();
+//		} catch (IOException ioe) {
+//			ioe.printStackTrace();
+//		} finally {
+//			fis.close();
+//		}
+//		return prop;
+//	}
+//
+//}

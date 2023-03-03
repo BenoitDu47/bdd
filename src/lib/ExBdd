@@ -1,0 +1,62 @@
+• Exercice 1 : [Répertorier vos requêtes dans un script]
+
+	• 1.1 Générer votre base de données à l’aide du script Shop.sql
+	
+	MariaDB [(none)]> create database bdtest;
+	
+	• 1.2 Effectuer les requêtes permettant d’afficher toutes les tables en base
+	
+	MariaDB [(shop)]> show databases;
+	
+	• 1.3 Trouver un moyen pour décrire une table
+	
+	MariaDB [(shop)]> describe t_articles;
+	
+	• 1.4 Ajouter à la table des articles des occurrences de votre choix
+	
+	MariaDB [(shop)]> insert into t_articles (description,brand,unitaryprice) value ('souris','PH','10');
+	
+	• 1.5 Modifier un article avant de vérifier si c’est pris en compte
+	
+	MariaDB [(shop)]> update t_articles set Brand='Logitech' , UnitaryPrice = 85 where IdArticle = 1;
+	
+	MariaDB [(shop)]> select * from t_articles;
+	
+	• 1.6 Supprimer un article puis vérifier
+	
+	MariaDB [(shop)]> delete from t_articles where IdArticle = 2;
+		
+	MariaDB [(shop)]> select * from t_articles;
+	
+	• 1.7 Sélectionner tous les articles dont le prix est supérieur à 100
+	
+	MariaDB [(shop)]> select t_articles.description from t_articles where unitaryprice>100;
+	
+	• 1.8 Sélectionner les articles dont le prix est compris entre 50 et 150
+	
+	MariaDB [(shop)]> select t_articles.description from t_articles where unitaryprice>50 and unitaryprice<150;
+	
+	• 1.9 Afficher les articles dans l'ordre croissant des prix
+	
+	MariaDB [(shop)]> selet * from t_articles order by unitaryprice;
+	
+	• 1.10 Afficher uniquement la description des articles
+	
+	MariaDB [(shop)]> select t_articles.description from t_articles;
+	
+	• 1.11 Choisissez une requête particulièrement intéressante à présenter
+	
+	
+	
+	• 1.12 Ajouter la table des catégories à votre base de données et insérez-e
+	
+	Fais
+	
+	• 1.13 Trouver la requête qui permet d’obtenir le résultat suivant :
+	
+	MariaDB [(shop)]>select idarticle,t_articles.description,brand,unitaryprice,catname from t_articles inner join t_categories on t_articles.idcategory = t_categories.idcategory where idarticle>10 order by unitaryprice;
+	
+	
+	
+	
+	
